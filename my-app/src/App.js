@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom/client';
 // import logo from './logo.svg';
 import { Navbar, NavbarBrand } from 'reactstrap';
 import './App.css';
-import { StaffList } from './components/StaffListComponent';
+import StaffList from './components/StaffListComponent';
 // import { DISHES } from './shared/dishes';
 import { STAFFS } from './shared/staffs';
+import dateFormat from "dateformat";
 
 class App extends Component {
   constructor(props){
@@ -17,10 +18,10 @@ class App extends Component {
       <div className="App" id ="root">
         <Navbar dark color="primary"> 
           <div className="container">
-            <NavbarBrand href="/"> Nhân viên</NavbarBrand>
+            <NavbarBrand href="/"> Ứng dụng quản lý nhân sự v1.0</NavbarBrand>
           </div>
         </Navbar>
-         {/* <StaffList staffs={this.state.staffs} /> */}
+         <StaffList staffs={this.state.staffs} />
       </div>
     );
   }

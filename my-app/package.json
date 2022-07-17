@@ -29,7 +29,6 @@
     "redux-thunk": "^2.4.1",
     "web-vitals": "^2.1.4",
     "with": "^7.0.2"
-    
   },
   "scripts": {
     "start": "react-scripts start",
