@@ -34,11 +34,11 @@ class StaffList extends Component {
         });
         // console.log('Menu Component render is invoked');
         return (
-            <div className="container">
+            <div className="container" >
                 <div className="row">
                         {list}
                 </div>
-                <div className="row">
+                <div className="row" > 
                     <StaffDetail selectStaff = {this.state.selectedStaff} />
                 </div>
                 <p> Bấm vào tên nhân viên để xem thông tin </p>
@@ -48,6 +48,7 @@ class StaffList extends Component {
     
 }
 export default StaffList;
+// flex-wrap='wrap' flex-direction ='column' align-content='center' align-items='center'
 // class Menu extends Component {
 
 //     constructor(props) {

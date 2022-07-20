@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 'reactstrap';
+import '../App.css';
 import dateFormat from "dateformat";
 
 class StaffDetail extends Component {
@@ -32,25 +33,24 @@ class StaffDetail extends Component {
             
     }
 
-    renderInfo(infoStaff){
-        if (infoStaff == null) {
-            return (<div></div>)
+    renderInfo(listStaff){
+        if (listStaff == null) {
+            return (<div>không có gì</div>)
         }
-        const inf = infoStaff.map(info => {
-            return (
-                <li key={info.id}>
-                    <h1> Họ và Tên: {info.name}</h1>
-                    <p> Ngày sinh: {dateFormat(info.doB, "dd/mm/yyyy")} </p>
-                    <p> Ngày vào công ty: {dateFormat(info.startDate, "dd/mm/yyyy")}</p>
-                    <p> Phòng ban: {info.department} </p>
-                    <p> Số ngày nghỉ còn lại: {info.annualLeave} </p>
-                    <p> Số ngày đã làm thêm: {info.overTime} </p>
+        const inf = ( 
+                <li key={listStaff.id}>
+                    <p> Họ và Tên: {listStaff.name}</p>
+                    <p> Ngày sinh: {dateFormat(listStaff.doB, "dd/mm/yyyy")} </p>
+                    <p> Ngày vào công ty: {dateFormat(listStaff.startDate, "dd/mm/yyyy")}</p>
+                    <p> Phòng ban: {listStaff.department.name} </p>
+                    <p> Số ngày nghỉ còn lại: {listStaff.annualLeave} </p>
+                    <p> Số ngày đã làm thêm: {listStaff.overTime} </p>
                 </li>
-            )
-        })
+        
+        )
         return (
-            <div className='col-12 col-md-5 m-1'>
-                <h4> Thông tin chi tiết </h4>
+            <div >
+                <h3> Thông tin chi tiết: </h3>
                 <ul className='list-unstyled'>
                     {inf}
                 </ul>
@@ -68,12 +68,12 @@ class StaffDetail extends Component {
         if (listStaff == null) {
             return (<div></div>);
         }
-
+        
         const staffImage = this.renderStaff(listStaff);
-        const staffInfo = this.renderInfo(listStaff.infoStaff);
+        const staffInfo = this.renderInfo(listStaff);
 
         return (
-            <div className='row'>
+            <div className='row contentSelect' style={{color: "red"}}>
                 {staffImage}
                 {staffInfo}
             </div>
